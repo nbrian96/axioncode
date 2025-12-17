@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    output: "export", // Permite generar un sitio estático
     productionBrowserSourceMaps: true,
     distDir: process.env.DIST_DIR || '.next',  typescript: {
       ignoreBuildErrors: true,
@@ -8,6 +9,7 @@ const nextConfig = {
       ignoreDuringBuilds: true,
     },
     images: {
+      unoptimized: true, // Deshabilita la optimización de imágenes para exportación estática
       remotePatterns: [
         {
           protocol: 'https',
